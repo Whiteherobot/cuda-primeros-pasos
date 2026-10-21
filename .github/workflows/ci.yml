@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Los runners no tienen GPU: se compila todo y solo se ejecuta el ejemplo de CPU.
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    container: nvidia/cuda:12.6.3-devel-ubuntu24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: apt-get update -qq && apt-get install -y -qq cmake > /dev/null
+      - run: cmake -S . -B build -DCMAKE_CUDA_ARCHITECTURES=89
+      - run: cmake --build build -j
+      - run: ./build/01_hola
