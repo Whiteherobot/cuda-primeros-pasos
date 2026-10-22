@@ -13,6 +13,8 @@ y con control de errores en cada llamada a la API. Los armé para probar el tool
 | `03_suma.cu` | Pasar parámetros y traer el resultado con `cudaMalloc` y `cudaMemcpy` |
 | `04_propiedades.cu` | Las GPUs disponibles y sus límites (`cudaGetDeviceProperties`) |
 | `05_suma_vectores.cu` | Un hilo por elemento, cómo calcular los bloques y tiempos con eventos CUDA |
+| `06_suma_basica.cu` | Reservar memoria en la GPU, ejecutar una suma y copiar el resultado |
+| `07_suma_arreglos_cpu.cu` | Sumar dos arreglos secuencialmente en la CPU |
 
 `common/book.h` trae `HANDLE_ERROR`, que corta el programa con el archivo y la línea si una
 llamada falla, y `CHECK_KERNEL`, porque los lanzamientos de kernel no devuelven error por sí
