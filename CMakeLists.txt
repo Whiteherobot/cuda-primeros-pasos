@@ -15,7 +15,7 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CUDA_STANDARD 17)
 
-foreach(ejemplo 01_hola 02_kernel 03_suma 04_propiedades 05_suma_vectores 06_suma_basica 07_suma_arreglos_cpu 08_suma_arreglos_gpu 09_suma_bloques 10_indice_bloque)
+foreach(ejemplo 01_hola 02_kernel 03_suma 04_propiedades 05_suma_vectores 06_suma_basica 07_suma_arreglos_cpu 08_suma_arreglos_gpu 09_suma_bloques 10_indice_bloque teams)
   file(GLOB fuente "${CMAKE_SOURCE_DIR}/src/${ejemplo}.*")
   add_executable(${ejemplo} ${fuente})
   target_include_directories(${ejemplo} PRIVATE common)
