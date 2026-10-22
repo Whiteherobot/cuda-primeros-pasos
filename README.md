@@ -15,6 +15,9 @@ y con control de errores en cada llamada a la API. Los armé para probar el tool
 | `05_suma_vectores.cu` | Un hilo por elemento, cómo calcular los bloques y tiempos con eventos CUDA |
 | `06_suma_basica.cu` | Reservar memoria en la GPU, ejecutar una suma y copiar el resultado |
 | `07_suma_arreglos_cpu.cu` | Sumar dos arreglos secuencialmente en la CPU |
+| `08_suma_arreglos_gpu.cu` | Copiar dos arreglos a la GPU, sumarlos con un kernel y recuperar el resultado |
+| `09_suma_bloques.cu` | Procesar los arreglos con un bloque y un hilo por cada elemento |
+| `10_indice_bloque.cu` | Usar `blockIdx.x` para asignar un elemento diferente a cada bloque |
 
 `common/book.h` trae `HANDLE_ERROR`, que corta el programa con el archivo y la línea si una
 llamada falla, y `CHECK_KERNEL`, porque los lanzamientos de kernel no devuelven error por sí
